@@ -9,7 +9,7 @@ use strict;
 use warnings;
 
 use lib qw/lib/;
-use Test::More tests => 3;
+use Test::More tests => 4;
 BEGIN { use_ok('Sorauta::SVN::AutoCommit') };
 
 #########################
@@ -19,6 +19,9 @@ BEGIN { use_ok('Sorauta::SVN::AutoCommit') };
 
 use_ok('SVN::Agent');
 use_ok('Image::Magick');
+
+my $ssa = Sorauta::SVN::AutoCommit->new;
+ok($ssa, "create new instance");
 
 # commit test
 =pod
