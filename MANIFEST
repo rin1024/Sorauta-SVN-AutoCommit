@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Sorauta-SVN-AutoCommit.t
+lib/Sorauta/SVN/AutoCommit.pm
