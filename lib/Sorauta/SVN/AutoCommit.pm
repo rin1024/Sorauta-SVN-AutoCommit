@@ -37,7 +37,7 @@ use SVN::Agent::Dummy;
 use Image::Magick;
 use Sorauta::Utility;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 # サムネイルの縦横
 our($THUMBNAIL_WIDTH, $THUMBNAIL_HEIGHT) = (160, 90);
@@ -357,20 +357,28 @@ __END__
 
 =head1 NAME
 
-Sorauta::Utility - Perl extension for blah blah blah
+Sorauta::SVN::AutoCommit - auto recognize new file and deleted file, and commit those files
 
 =head1 SYNOPSIS
 
-  use Sorauta::Utility;
-  blah blah blah
+  use Sorauta::SVN::AutoCommit;
+
+  my $SVN_MODE = "auto_commit";
+  my $SVN_WORK_DIR = "/Users/user/Desktop/svn_dir";
+  my $DEBUG = 0;
+
+  my $ssa = Sorauta::SVN::AutoCommit->new({
+    svn_mode      => $SVN_MODE,
+    work_dir_path => $SVN_WORK_DIR,
+    debug         => $DEBUG,
+  });
+
+  #print $ssa;
+  $ssa->execute();
 
 =head1 DESCRIPTION
 
-Stub documentation for Sorauta::Utility, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
-
-Blah blah blah.
+auto recognize new file and deleted file, and commit those files.
 
 =head2 EXPORT
 
